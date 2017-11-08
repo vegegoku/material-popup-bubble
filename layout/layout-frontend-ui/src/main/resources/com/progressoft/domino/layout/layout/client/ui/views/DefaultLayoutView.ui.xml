@@ -1,0 +1,86 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:m='urn:import:gwt.material.design.client.ui'
+             xmlns:ma='urn:import:gwt.material.design.addins.client'
+             xmlns:d='urn:import:com.progressoft.domino.layout.layout.client.ui.views'
+>
+
+    <ui:with field="bundle" type="com.progressoft.domino.layout.layout.client.ui.views.LayoutBundle"/>
+    <ui:style gss="true">
+        .nav-brand{
+            left :110px !important;
+        }
+
+        .header-icon{
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+        }
+
+        .popup-bubble{
+            border : 1px solid #c0c0c0 !important;
+        }
+    </ui:style>
+
+    <m:MaterialPanel>
+        <m:MaterialHeader ui:field="header">
+            <m:MaterialNavBar layoutPosition="FIXED" ui:field="navBar" activates="sidenavNavShrink"
+                              backgroundColor="PURPLE" shadow="1">
+                <m:MaterialNavBrand fontSize="1.5em" text="My Files" showOn="SHOW_ON_LARGE" addStyleNames="{style.nav-brand}"/>
+                <m:MaterialNavSection float="RIGHT" showOn="SHOW_ON_MED_DOWN">
+                    <m:MaterialLink ui:field="help" iconType="SEARCH"  showOn="SHOW_ON_MED_DOWN" addStyleNames="{style.header-icon}"/>
+                    <m:MaterialLink ui:field="apps" iconType="WIDGETS"  showOn="SHOW_ON_MED_DOWN" addStyleNames="{style.header-icon}"/>
+                    <m:MaterialLink ui:field="userProfile" iconType="PERSON" addStyleNames="{style.header-icon}"/>
+                    <m:MaterialLink ui:field="more" iconType="MORE_VERT" addStyleNames="{style.header-icon}"/>
+                </m:MaterialNavSection>
+            </m:MaterialNavBar>
+        </m:MaterialHeader>
+
+        <d:MaterialPopupBubble ui:field="dominoPopup" popupY="55" shadow="1" visible="false" width="500" backgroundColor="WHITE" position="TOP" addStyleNames="{style.popup-bubble}">
+            <m:MaterialRow>
+                <m:MaterialColumn>
+                    <m:MaterialIcon iconType="CAMERA_ENHANCE" iconSize="MEDIUM" iconColor="BLUE_ACCENT_1"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn>
+                    <m:MaterialIcon iconType="ACCOUNT_BALANCE" iconSize="MEDIUM" iconColor="TEAL_DARKEN_1"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn>
+                    <m:MaterialIcon iconType="BOOK" iconSize="MEDIUM" iconColor="GREEN_DARKEN_1"/>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+            <m:MaterialRow>
+                <m:MaterialColumn>
+                    <m:MaterialIcon iconType="EXPLORE" iconSize="MEDIUM" iconColor="DEEP_ORANGE_ACCENT_1"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn>
+                    <m:MaterialIcon iconType="G_TRANSLATE" iconSize="MEDIUM" iconColor="RED_DARKEN_1"/>
+                </m:MaterialColumn>
+                <m:MaterialColumn>
+                    <m:MaterialIcon iconType="REDEEM" iconSize="MEDIUM" iconColor="LIGHT_BLUE_DARKEN_2"/>
+                </m:MaterialColumn>
+            </m:MaterialRow>
+        </d:MaterialPopupBubble>
+
+        <m:MaterialSideNavDrawer m:id="sidenavNavShrink" ui:field="sideNavCard" width="300">
+            <m:MaterialNavBrand text="gwt-material"/>
+            <m:MaterialLink iconType="INBOX" text="Inbox">
+                <m:MaterialBadge text="1 new"/>
+            </m:MaterialLink>
+            <m:MaterialLink iconType="SEND" text="Send Mail"/>
+            <m:MaterialLink iconType="DRAFTS" text="Drafts"/>
+            <m:MaterialLink iconType="MAIL" text="All Mail"/>
+            <m:MaterialLink iconType="DELETE" text="Trash"/>
+            <m:MaterialLink iconType="INFO_OUTLINE" text="Spam"/>
+        </m:MaterialSideNavDrawer>
+
+        <m:MaterialContainer height="1600px" paddingTop="200">
+            <m:MaterialRow textAlign="CENTER" paddingTop="40">
+                <m:MaterialImage url="http://i.imgur.com/7JpG0F4.gif"/>
+            </m:MaterialRow>
+            <m:MaterialFAB ui:field="fab">
+                <m:MaterialButton type="FLOATING"
+                                  href="https://github.com/GwtMaterialDesign/gwt-material-patterns/blob/release_2.0/src/main/java/com/github/gwtmaterialdesign/client/application/sidenavcard/CardSideNavView.ui.xml"
+                                  target="_blank" backgroundColor="PINK" size="LARGE" iconType="CODE"/>
+            </m:MaterialFAB>
+        </m:MaterialContainer>
+    </m:MaterialPanel>
+</ui:UiBinder>
